@@ -1,0 +1,19 @@
+.btn-text{
+    text-decoration: none;
+    color: #737682;
+    transition: 0.3s;
+}
+
+.btn-text:hover{
+    color: #8989ee;
+}
+
+.image-card{
+    transition: 0.4s;
+}
+
+
+.image-card:hover{
+    scale: 1.3;
+    filter: saturate(200%) brightness(100%);
+}
