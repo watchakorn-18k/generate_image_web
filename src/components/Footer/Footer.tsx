@@ -26,7 +26,7 @@ export default function Footer() {
         <div>
           <span className="footer-title">SOURCE</span>
           <div className="grid grid-flow-col">
-            <a href="https://github.com/watchakorn-18k" target="_blank">
+            <a href="https://github.com/watchakorn-18k/generate_image_web" target="_blank">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="icon icon-tabler icon-tabler-brand-github"
