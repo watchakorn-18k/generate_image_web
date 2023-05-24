@@ -2,7 +2,7 @@ import "./Footer.css";
 import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
-  const { t, i18n } = useTranslation();
+  const { t} = useTranslation();
   return (
     <div className="pt-10">
       <footer className="footer p-5 bg-neutral text-neutral-content flex justify-center md:flex md:justify-around ">

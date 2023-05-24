@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { IconArrowRight } from "@tabler/icons-react";
 import "./TextPrompt.css";
 import { useTranslation } from 'react-i18next';
@@ -12,7 +12,7 @@ type Props = {
 
 
 export default function TextPrompt({ status_gen }: Props) {
-  const { t, i18n } = useTranslation();
+  const { t} = useTranslation();
   const [inputText, setInputText] = useState("");
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,7 +35,7 @@ export default function TextPrompt({ status_gen }: Props) {
         <div className="input-group rounded rounded-full">
           <input
             type="text"
-            placeholder={t('prompt')}
+            placeholder={t('prompt') ?? ""}
             className="input w-full input-bordered input-prompt"
             onChange={handleInputChange} disabled={!status_gen}
           />

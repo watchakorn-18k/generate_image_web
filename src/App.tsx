@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 
 
 export default function App() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [data, setData] = useState({ status_gen: false, images: [], prompt_text: "" });
   
   useEffect(() => {

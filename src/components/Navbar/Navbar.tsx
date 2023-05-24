@@ -41,13 +41,14 @@ export default function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+            className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52" about={language}
           >
             <li onClick={() => handleLanguageChange('th')}>
               <a>ภาษาไทย</a>
             </li>
             <li onClick={() => handleLanguageChange('en')}>
               <a>English</a>
+              
             </li>
           </ul>
         </div>
