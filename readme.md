@@ -5,11 +5,27 @@
 https://fast-apiimggen--etwg34dassad211.repl.co
 ```
 
+# Install
+```
+npm create vite@latest
+```
+
 # Start
 ```
 git clone https://github.com/watchakorn-18k/generate_image_web
 cd generate_image_web
+
 npm start
+```
+
+# Run
+```
+npm run dev
+```
+
+# Build
+```
+npm run build
 ```
 
 # Example
