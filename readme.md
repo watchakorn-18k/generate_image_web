@@ -14,13 +14,17 @@ npm start
 
 # Example
 
-<div alignt="center">
+<p align="center">
 
-![image](https://cdn.discordapp.com/attachments/585069498986397707/1110816643057205261/screenshot-1684909697130.jpeg)
-![image](https://cdn.discordapp.com/attachments/585069498986397707/1110816643346595860/screenshot-1684909704219.jpeg)
-![image](https://cdn.discordapp.com/attachments/585069498986397707/1110816643627626507/screenshot-1684909677103.jpeg)
 
-</div>
+<img src="https://cdn.discordapp.com/attachments/585069498986397707/1110816643057205261/screenshot-1684909697130.jpeg" />
+
+<img src="https://cdn.discordapp.com/attachments/585069498986397707/1110816643346595860/screenshot-1684909704219.jpeg" />
+
+<img src="https://cdn.discordapp.com/attachments/585069498986397707/1110816643627626507/screenshot-1684909677103.jpeg" />
+
+</p>
+
 
 # Changelog
 - v1.0.1 Add Alert to Generate Image and Add event Enter <p align="center"><img src="https://cdn.discordapp.com/attachments/585069498986397707/1111121577174650920/image.png" /></p>
