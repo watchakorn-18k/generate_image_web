@@ -11,9 +11,14 @@ import Navbar from "./components/Navbar/Navbar.tsx";
 import { useTranslation } from 'react-i18next';
 
 
+
 export default function App() {
   const { t } = useTranslation();
   const [data, setData] = useState({ status_gen: false, images: [], prompt_text: "" });
+
+  const handleContextMenu = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+  }
   
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +33,8 @@ export default function App() {
       }
     };
 
+    
+
     fetchData();
 
     const interval = setInterval(() => {
@@ -39,7 +46,7 @@ export default function App() {
 
   return (
     
-    <div className="flex flex-col min-h-screen justify-between">
+    <div className="flex flex-col min-h-screen justify-between" onContextMenu={handleContextMenu}>
       <Navbar />
       <div className="container mx-auto px-5 flex flex-col justify-between">
         <div className="grid grid-cols-1 gap-2">

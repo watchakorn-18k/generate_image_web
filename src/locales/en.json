@@ -4,5 +4,6 @@
     ,"by":"Make By",
     "name_1":"Watchakorn Buddeewong",
     "name_2":"Ruangdej Khantayaporn",
-    "prompt":"Fill out the prompts for creating a exsample：a snowy night"
+    "prompt":"Fill out the prompts for creating a exsample：a snowy night",
+    "error":"Prompt is required! to create an image first"
 }

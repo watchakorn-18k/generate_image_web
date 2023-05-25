@@ -29,7 +29,7 @@ export default function Footer() {
             <a href="https://github.com/watchakorn-18k/generate_image_web" target="_blank">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="icon icon-tabler icon-tabler-brand-github"
+                className="icon icon-tabler icon-tabler-brand-github hover:text-blue-500 hover:shadow-lg transition duration-300"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"

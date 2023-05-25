@@ -21,3 +21,7 @@ npm start
 ![image](https://cdn.discordapp.com/attachments/585069498986397707/1110816643627626507/screenshot-1684909677103.jpeg)
 
 </div>
+
+# Changelog
+- v1.0.1 Add Alert to Generate Image and Add event Enter <p align="center"><img src="https://cdn.discordapp.com/attachments/585069498986397707/1111121577174650920/image.png" /></p>
+- v1.0.0 Release generate image from text
