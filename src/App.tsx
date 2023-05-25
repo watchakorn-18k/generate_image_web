@@ -1,7 +1,6 @@
 // import React from 'react'
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { IconLoader3 } from "@tabler/icons-react";
 import image_logo from "@/assets/image_logo.png";
 import ImageShow from "./components/ImageShow/ImageShow.tsx";
 import TextPrompt from "./components/TextPrompt/TextPrompt.tsx";
@@ -9,12 +8,13 @@ import CardImage from "./components/CardImage/CardImage.tsx";
 import Footer from "./components/Footer/Footer.tsx";
 import Navbar from "./components/Navbar/Navbar.tsx";
 import { useTranslation } from 'react-i18next';
-
+import { Progress,Spinner } from "@material-tailwind/react";
 
 
 export default function App() {
   const { t } = useTranslation();
   const [data, setData] = useState({ status_gen: false, images: [], prompt_text: "" });
+  const [value, setValue] = useState(0);
 
   const handleContextMenu = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -33,12 +33,21 @@ export default function App() {
       }
     };
 
+  
+
     fetchData();
 
     const interval = setInterval(() => {
       fetchData();
     }, 5000);
 
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setValue(value => (value + 0.1) % 100);
+    }, 0);
     return () => clearInterval(interval);
   }, []);
 
@@ -53,15 +62,19 @@ export default function App() {
           
           <TextPrompt status_gen={data.status_gen} />
           {data.status_gen === false ? (
-            <center>
-              <IconLoader3 className="animate-spin h-20 w-20 mr-3" />
-              <p className="text-center text-xl">{t('loading')}</p>
-            </center>
+            <div className="grid grid-cols-1 gap-2 place-items-center p-10 md:p-32">
+              
+              <Spinner className="h-10 w-10 md:h-20 md:w-20 mr-3" />
+              <p className="text-center text-xl animate-pulse">{t('loading')}</p>
+              <Progress value={value} className="w-60 md:w-1/2 " variant="gradient" />
+            </div>
           ) : (
             <CardImage text={data.prompt_text} urls={data.images} />
           )}
         </div>
+        
       </div>
+      
       <Footer />
     </div>
   );

@@ -14,23 +14,16 @@ export default function Footer() {
       <footer className="footer p-5 bg-neutral text-neutral-content flex justify-center md:flex md:justify-around ">
         <div>
           <span className="footer-title"> {t("by")}</span>
-          <div className="grid grid-flow-col">
-            <svg
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>FastAPI</title>
-              <path d="M12 0C5.375 0 0 5.375 0 12c0 6.627 5.375 12 12 12 6.626 0 12-5.373 12-12 0-6.625-5.373-12-12-12zm-.624 21.62v-7.528H7.19L13.203 2.38v7.528h4.029L11.376 21.62z" />
-            </svg>
-            <div className="grid grid-flow-col gap-1">
+          <div className="grid grid-flow-row grid-cols-1 md:grid-flow-col gap-5">
+
+            <div className="grid grid-flow-col gap-0 md:gap-1">
               <SiFastapi />
               <SiPython />
               <SiVite />
               <SiTsnode />
             </div>
 
-            <p className="px-3">{t("name_1")} ( Front-End / Back-End )</p>
+            <p >{t("name_1")} ( Front-End / Back-End )</p>
           </div>
           <div className="grid grid-flow-col">
             <svg

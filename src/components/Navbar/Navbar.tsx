@@ -33,8 +33,8 @@ export default function Navbar() {
   return (
     <div>
       <div className="navbar bg-base-100">
-        <div className="flex-1 hover:animate-pulse">
-          <a className="btn btn-ghost normal-case text-xl">{t('name_web')}</a>
+        <div className="flex-1">
+          <a className="btn btn-ghost normal-case text-xl hover:animate-pulse">{t('name_web')}</a>
         </div>
         <div className="dropdown dropdown-bottom dropdown-end dropdown-hover">
           <div className="flex-none">
