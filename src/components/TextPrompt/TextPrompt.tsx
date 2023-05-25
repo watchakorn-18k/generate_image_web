@@ -13,6 +13,7 @@ export default function TextPrompt({ status_gen }: Props) {
   const { t } = useTranslation();
   const [inputText, setInputText] = useState("");
   const [open, setOpen] = useState(false);
+  
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
@@ -30,16 +31,17 @@ export default function TextPrompt({ status_gen }: Props) {
     if (open) {
       const timeoutId = setTimeout(() => {
         setOpen(false);
-      }, 5000);
+      }, 2000);
       return () => clearTimeout(timeoutId);
     }
   }, [open]);
 
   const SendData = () => {
     if (inputText != "") {
-      axios
-        .post(
-          import.meta.env.URL_API,
+      console.log(inputText,import.meta.env.VITE_URL_GENERATE);
+      
+      axios.post(
+          `${import.meta.env.VITE_URL_GENERATE}`,
           { prompt: inputText }
         )
         .then((response) => {

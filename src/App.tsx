@@ -15,6 +15,7 @@ export default function App() {
   const { t } = useTranslation();
   const [data, setData] = useState({ status_gen: false, images: [], prompt_text: "" });
   const [value, setValue] = useState(0);
+  const [isRunning, setIsRunning] = useState(true);
 
   const handleContextMenu = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -28,8 +29,15 @@ export default function App() {
         );
         setData(result.data);
         console.log(result.data);
+        if (result.data.status_gen === true) {
+          setIsRunning(false);
+        }
+        else {
+          setIsRunning(true);
+        }
       } catch (error) {
         console.log(error);
+        setIsRunning(true);
       }
     };
 
@@ -39,17 +47,22 @@ export default function App() {
 
     const interval = setInterval(() => {
       fetchData();
-    }, 5000);
+    }, 1500);
 
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setValue(value => (value + 0.1) % 100);
-    }, 0);
-    return () => clearInterval(interval);
-  }, []);
+    let intervalId: NodeJS.Timeout;
+
+    if (isRunning) {
+      intervalId = setInterval(() => {
+        setValue((value) => (value + 0.1) % 100);
+      });
+    }
+
+    return () => clearInterval(intervalId);
+  }, [isRunning]);
 
   return (
     
@@ -66,10 +79,11 @@ export default function App() {
               
               <Spinner className="h-10 w-10 md:h-20 md:w-20 mr-3" />
               <p className="text-center text-xl animate-pulse">{t('loading')}</p>
-              <Progress value={value} className="w-60 md:w-1/2 " variant="gradient" />
+              <Progress value={value}  className="w-60 md:w-1/2 " variant="gradient" />
             </div>
           ) : (
-            <CardImage text={data.prompt_text} urls={data.images} />
+              <CardImage text={data.prompt_text} urls={data.images} />
+              
           )}
         </div>
         

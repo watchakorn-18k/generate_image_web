@@ -40,3 +40,27 @@
 .read-the-docs {
   color: #888;
 }
+
+.progress {
+  width: 60%;
+  max-width: 50%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.progress-gradient {
+  animation: progress-bar-gradient 2s linear infinite;
+}
+
+@keyframes progress-bar-gradient {
+  0% {
+    background: linear-gradient(to right, #f00, #ff0);
+  }
+  50% {
+    background: linear-gradient(to right, #ff0, #0f0);
+  }
+  100% {
+    background: linear-gradient(to right, #0f0, #00f);
+  }
+}

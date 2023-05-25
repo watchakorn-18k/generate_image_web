@@ -27,6 +27,8 @@ npm start
 
 
 # Changelog
+- v1.0.6 Fix bug small
+- v1.0.5 Opimize performance web
 - v1.0.4 Change loading new
 - v1.0.3 Add Icon Footer
 - v1.0.2 Add sessionStorage for switch language when refresh can change language follow your select

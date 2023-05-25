@@ -77,7 +77,7 @@ export default function Card({ url, text, index }: Props) {
                     <a
                       href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
                         url
-                      )}&text=Generatek%20image%20from%20text%20with%20 by wk18k!`}
+                      )}&text=Generate%20image%20from%20text%20with%20 by wk18k!`}
                       target="_blank"
                     >
                       <IconBrandTwitter />
