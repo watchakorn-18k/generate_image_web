@@ -17,3 +17,7 @@
     scale: 1.3;
     filter: saturate(200%) brightness(100%);
 }
+
+.text{
+    font-family: 'Noto Sans Thai', sans-serif !important;
+}

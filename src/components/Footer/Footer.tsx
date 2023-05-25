@@ -1,32 +1,65 @@
 import "./Footer.css";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
+import {
+  SiFastapi,
+  SiPython,
+  SiTsnode,
+  SiVite,
+} from "@icons-pack/react-simple-icons";
 
 export default function Footer() {
-  const { t} = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className="pt-10">
       <footer className="footer p-5 bg-neutral text-neutral-content flex justify-center md:flex md:justify-around ">
         <div>
-          <svg
-            width="50"
-            height="50"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            fillRule="evenodd"
-            clipRule="evenodd"
-            className="fill-current"
-          >
-            <path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path>
-          </svg>
-          <br />
-          <p>
-            {t("by")}<br /> {t('name_1')} (Front-end / Back-end) <br /> {t('name_2')} (UX / UI)
-          </p>
+          <span className="footer-title"> {t("by")}</span>
+          <div className="grid grid-flow-col">
+            <svg
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>FastAPI</title>
+              <path d="M12 0C5.375 0 0 5.375 0 12c0 6.627 5.375 12 12 12 6.626 0 12-5.373 12-12 0-6.625-5.373-12-12-12zm-.624 21.62v-7.528H7.19L13.203 2.38v7.528h4.029L11.376 21.62z" />
+            </svg>
+            <div className="grid grid-flow-col gap-1">
+              <SiFastapi />
+              <SiPython />
+              <SiVite />
+              <SiTsnode />
+            </div>
+
+            <p className="px-3">{t("name_1")} ( Front-End / Back-End )</p>
+          </div>
+          <div className="grid grid-flow-col">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="icon icon-tabler icon-tabler-brand-figma"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M15 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+              <path d="M6 3m0 3a3 3 0 0 1 3 -3h6a3 3 0 0 1 3 3v0a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3 -3z"></path>
+              <path d="M9 9a3 3 0 0 0 0 6h3m-3 0a3 3 0 1 0 3 3v-15"></path>
+            </svg>
+            <p className="px-2">{t("name_2")} ( UX / UI )</p>
+          </div>
         </div>
         <div>
           <span className="footer-title">SOURCE</span>
-          <div className="grid grid-flow-col">
-            <a href="https://github.com/watchakorn-18k/generate_image_web" target="_blank">
+          <div className="grid grid-flow-col gap-1">
+            <a
+              href="https://github.com/watchakorn-18k/generate_image_web"
+              target="_blank"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="icon icon-tabler icon-tabler-brand-github hover:text-blue-500 hover:shadow-lg transition duration-300"
@@ -46,6 +79,21 @@ export default function Footer() {
           </div>
         </div>
       </footer>
+      <div className="footer p-2 bg-neutral text-neutral-content flex justify-center md:flex md:justify-around ">
+        <div className="flex justify-center w-full">
+          <div className="grid grid-cols-1 gap-1 place-items-center">
+          <img
+            src="https://sciencetech.nrru.ac.th/vendor/bootstrap/images/logo_nrru.png"
+            alt=""
+            className="w-5 grayscale brightness-150 contrast-125 hover:grayscale-0 hover:contrast-100 transition duration-300"
+            draggable="false"
+          />
+            <span className="footer-title">NRRU</span>
+          </div>
+         
+        </div>
+        
+      </div>
     </div>
   );
 }

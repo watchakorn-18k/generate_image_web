@@ -5,8 +5,11 @@ import {
   IconBrandTwitter,
   IconBrandLinkedin,
 } from "@tabler/icons-react";
+import { Tooltip } from "@material-tailwind/react";
 import FileSaver from "file-saver";
 import "./CardImage.css";
+import { useTranslation } from 'react-i18next';
+
 
 type Props = {
   url: string;
@@ -15,6 +18,7 @@ type Props = {
 };
 
 export default function Card({ url, text, index }: Props) {
+  const { t } = useTranslation();
   const handleDownload = () => {
     fetch(url)
       .then((res) => res.blob())
@@ -29,23 +33,31 @@ export default function Card({ url, text, index }: Props) {
       <div className="indicator">
         <span className="indicator-item badge badge-secondary">#{index}</span>
         <div className="card card-compact w-full md:w-96 bg-base-100 shadow-xl">
+        <Tooltip className="text" content={`${t("tool-tip-image")} ${text} ${index}`} placement="right" >
           <figure>
+          
             <img
               src={`${url}?v=${Math.floor(Math.random() * 100000)}`}
               className="w-full h-80 object-cover image-card"
-            />
-          </figure>
+              />
+              
+            </figure>
+            </Tooltip>
           <div className="card-body">
             <h2 className="card-title"></h2>
             <p className="text">{text}</p>
             <div className="card-actions justify-end">
-              <button className="btn-text" onClick={handleDownload}>
-                <IconDownload />
-              </button>
+              <Tooltip className="text" content={t("tool-tip-download")} >
+                <button className="btn-text" onClick={handleDownload}>
+                  <IconDownload />
+                </button>
+              </Tooltip>
               <div className="dropdown">
+              <Tooltip className="text" content={t("tool-tip-share")} >
                 <label tabIndex={0} className="btn-text">
                   <IconShare />
-                </label>
+                  </label>
+                </Tooltip>
                 <ul
                   tabIndex={0}
                   className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"

@@ -27,5 +27,7 @@ npm start
 
 
 # Changelog
+- v1.0.3 Add Icon Footer
+- v1.0.2 Add sessionStorage for switch language when refresh can change language follow your select
 - v1.0.1 Add Alert to Generate Image and Add event Enter <p align="center"><img src="https://cdn.discordapp.com/attachments/585069498986397707/1111121577174650920/image.png" /></p>
 - v1.0.0 Release generate image from text

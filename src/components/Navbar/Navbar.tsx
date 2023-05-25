@@ -12,16 +12,19 @@ i18n.use(initReactI18next).init({
       en: { translation: en },
       th: { translation: th },
     },
-    lng: 'th', // Default language
+    lng: sessionStorage.getItem('language') || 'en', // Default language
   });
 
 
 export default function Navbar() {
-    const [language, setLanguage] = useState("th");
+  const [language, setLanguage] = useState(() => {
+    const storedValue = sessionStorage.getItem('language');
+    return storedValue !== null ? storedValue : 'th';
+    });
     const { t, i18n } = useTranslation()
-    useEffect(() => {
-        setLanguage("th");
-    }, []);
+  useEffect(() => {
+        sessionStorage.setItem('language', language);
+    }, [language]);
     
     const handleLanguageChange = (newLanguage:string) => {
         i18n.changeLanguage(newLanguage);

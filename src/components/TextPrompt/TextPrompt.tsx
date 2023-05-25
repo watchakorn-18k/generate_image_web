@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { IconArrowRight } from "@tabler/icons-react";
 import "./TextPrompt.css";
 import { useTranslation } from "react-i18next";
-import { Alert } from "@material-tailwind/react";
+import { Alert,Tooltip } from "@material-tailwind/react";
 
 type Props = {
   status_gen: boolean;
@@ -39,7 +39,7 @@ export default function TextPrompt({ status_gen }: Props) {
     if (inputText != "") {
       axios
         .post(
-          "https://fast-apiimggen--etwg34dassad211.repl.co/generate-image",
+          import.meta.env.URL_API,
           { prompt: inputText }
         )
         .then((response) => {
@@ -64,7 +64,7 @@ export default function TextPrompt({ status_gen }: Props) {
             disabled={!status_gen}
             onKeyDown={handleKeyDown}
           />
-
+          <Tooltip className="text" content={t("tool-tip-generate")} >
           <button
             className={`${
               !status_gen
@@ -73,13 +73,15 @@ export default function TextPrompt({ status_gen }: Props) {
             }`}
             onClick={SendData}
             disabled={!status_gen}
-          >
+            >
+            
             <IconArrowRight
               className="relative right-0 bounce2"
               width={"30"}
               height={"30"}
             />
-          </button>
+            </button>
+            </Tooltip>
         </div>
       </div>
       <Alert open={open} onClose={() => setOpen(false) }  color="red" animate={{

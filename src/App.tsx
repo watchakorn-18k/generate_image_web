@@ -24,7 +24,7 @@ export default function App() {
     const fetchData = async () => {
       try {
         const result = await axios.get(
-          "https://fast-apiimggen.etwg34dassad211.repl.co/image"
+          import.meta.env.VITE_URL_API
         );
         setData(result.data);
         console.log(result.data);
@@ -32,8 +32,6 @@ export default function App() {
         console.log(error);
       }
     };
-
-    
 
     fetchData();
 
