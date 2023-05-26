@@ -43,6 +43,7 @@ npm run build
 
 
 # Changelog
+- v1.0.7 Add Thumbnail and fix responsive mobile
 - v1.0.6 Fix bug small
 - v1.0.5 Opimize performance web
 - v1.0.4 Change loading new

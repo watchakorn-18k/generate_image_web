@@ -13,11 +13,12 @@ import { useTranslation } from 'react-i18next';
 
 type Props = {
   url: string;
+  thumbnail: string;
   text: string;
   index: number;
 };
 
-export default function Card({ url, text, index }: Props) {
+export default function Card({ url, text, index , thumbnail }: Props) {
   const { t } = useTranslation();
   const handleDownload = () => {
     fetch(url)
@@ -32,12 +33,12 @@ export default function Card({ url, text, index }: Props) {
     <div className="py-1 lg:py-5">
       <div className="indicator">
         <span className="indicator-item badge badge-secondary">#{index}</span>
-        <div className="card card-compact w-full md:w-96 bg-base-100 shadow-xl">
-        <Tooltip className="text" content={`${t("tool-tip-image")} ${text} ${index}`} placement="right" >
+        <div className="card card-compact w-80 md:w-96 bg-base-100 shadow-xl">
+        <Tooltip className="text" content={`${t("tool-tip-image")} #${index}`} placement="right" >
           <figure>
           
             <img
-              src={`${url}?v=${Math.floor(Math.random() * 100000)}`}
+              src={`${thumbnail}?v=${Math.floor(Math.random() * 100000)}`}
               className="w-full h-80 object-cover image-card"
               />
               

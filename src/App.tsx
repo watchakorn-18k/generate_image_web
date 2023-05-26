@@ -13,7 +13,7 @@ import { Progress,Spinner } from "@material-tailwind/react";
 
 export default function App() {
   const { t } = useTranslation();
-  const [data, setData] = useState({ status_gen: false, images: [], prompt_text: "" });
+  const [data, setData] = useState({ status_gen: false, images: [], prompt_text: "","thumbnail": [] });
   const [value, setValue] = useState(0);
   const [isRunning, setIsRunning] = useState(true);
 
@@ -82,7 +82,7 @@ export default function App() {
               <Progress value={value}  className="w-60 md:w-1/2 " variant="gradient" />
             </div>
           ) : (
-              <CardImage text={data.prompt_text} urls={data.images} />
+              <CardImage text={data.prompt_text} urls={data.images} thumbnails={data.thumbnail} />
               
           )}
         </div>

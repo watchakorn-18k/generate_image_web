@@ -2,12 +2,13 @@ import Card from "./Card.tsx";
 
 type Props = {
   urls: string[];
+  thumbnails: string[];
   text: string;
 };
 
-export default function CardImage({ urls,text}: Props) {
+export default function CardImage({ urls,text,thumbnails}: Props) {
     const CardElements = urls.map((url: string,index: number) => (
-        <Card key={index} url={url} text={text} index={index+1} />
+        <Card key={index} url={url} text={text} thumbnail={thumbnails[index]} index={index+1} />
       ));
   return (
       <div className="flex justify-center">
