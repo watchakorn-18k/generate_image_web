@@ -43,6 +43,7 @@ npm run build
 
 
 # Changelog
+- v1.1.3 Change name donwload image
 - v1.1.2 Add random image logo
 - v1.1.1 Fixed bug tooltip responsive with remove there
 - v1.1.0 Fixed bug Responsive Card

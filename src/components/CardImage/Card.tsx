@@ -23,7 +23,7 @@ export default function Card({ url, text, index, thumbnail }: Props) {
     fetch(url)
       .then((res) => res.blob())
       .then((blob) => {
-        FileSaver.saveAs(blob, `${text} ${index} wk18k.jpeg`);
+        FileSaver.saveAs(blob, `${index}_${thumbnail.slice(58,-5)}-wk18k.jpeg`);
       })
       .catch((err) => console.error(err));
   };
