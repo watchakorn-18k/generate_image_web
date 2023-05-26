@@ -71,7 +71,7 @@ export default function TextPrompt({ status_gen }: Props) {
             className={`${
               !status_gen
                 ? "btn btn-square h-14 w-14 md:h-20 sm:w-20 btn-search relative mobile-top right-3 md:right-5 hover:bg-blue-500 btn-disable"
-                : "btn btn-square h-14 w-14 md:h-20 sm:w-20 btn-search relative mobile-top right-3 md:right-5 hover:bg-blue-500"
+                : "btn btn-square h-14 w-14 md:h-20 sm:w-20 btn-search relative mobile-top right-3 md:right-5 hover:bg-blue-500 hover:right-3 hover:transition-all hover:duration-400 transition-all duration-300" 
             }`}
             onClick={SendData}
             disabled={!status_gen}
