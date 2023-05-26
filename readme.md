@@ -1,4 +1,6 @@
-# Genarate Image From Text
+<h1 align="center">Genarate Image From Text</h1>
+<p align="center"><img src="https://cdn.discordapp.com/attachments/585069498986397707/1111517852009238628/image.png"></p>
+<p align="center">🖼️ Generate Inage With Text with EdgeGPT reverse engineering</p>
 
 # API
 ```
