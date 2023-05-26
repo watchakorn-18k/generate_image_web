@@ -10,5 +10,6 @@
     "tool-tip-share":"Share image",
     "tool-tip-generate":"Start generate image",
     "tool-tip-image":"Image",
-    "scenario":"Scenario"
+    "scenario":"Scenario",
+    "status_err":"Your prompt has been blocked by Bing. Try to change any bad words and try again."
 }

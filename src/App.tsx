@@ -15,7 +15,7 @@ import { Progress,Spinner } from "@material-tailwind/react";
 
 export default function App() {
   const { t } = useTranslation();
-  const [data, setData] = useState({ status_gen: false, images: [], prompt_text: "","thumbnail": [] });
+  const [data, setData] = useState({ status_gen: false, images: [], prompt_text: "","thumbnail": [],status_erro:false });
   const [value, setValue] = useState(0);
   const [isRunning, setIsRunning] = useState(true);
   const choices = [image_logo, image_logo_1, image_logo_2];
@@ -81,7 +81,7 @@ export default function App() {
 
           <ImageShow src_image={randomChoice} />
           
-          <TextPrompt status_gen={data.status_gen} />
+          <TextPrompt status_gen={data.status_gen} status_erro={data.status_erro} />
           {data.status_gen === false ? (
             <div className="grid grid-cols-1 gap-2 place-items-center p-10 md:p-32">
               
@@ -90,7 +90,7 @@ export default function App() {
               <Progress value={value}  className="w-60 md:w-1/2 " variant="gradient" />
             </div>
           ) : (
-              <CardImage text={data.prompt_text} urls={data.images} thumbnails={data.thumbnail} />
+              <CardImage text={data.prompt_text} urls={data.images} thumbnails={data.thumbnail}/>
               
           )}
         </div>
