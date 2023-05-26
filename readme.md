@@ -43,6 +43,10 @@ npm run build
 
 
 # Changelog
+- v1.1.1 Fixed bug tooltip responsive with remove there
+- v1.1.0 Fixed bug Responsive Card
+- v1.0.9 Fixed bug and add text small in card
+- v1.0.8 Opimize performance web and server api
 - v1.0.7 Add Thumbnail and fix responsive mobile
 - v1.0.6 Fix bug small
 - v1.0.5 Opimize performance web

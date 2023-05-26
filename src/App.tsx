@@ -20,6 +20,8 @@ export default function App() {
   const handleContextMenu = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
   }
+
+  
   
   useEffect(() => {
     const fetchData = async () => {
@@ -29,6 +31,7 @@ export default function App() {
         );
         setData(result.data);
         console.log(result.data);
+        
         if (result.data.status_gen === true) {
           setIsRunning(false);
         }
@@ -47,7 +50,7 @@ export default function App() {
 
     const interval = setInterval(() => {
       fetchData();
-    }, 1500);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, []);

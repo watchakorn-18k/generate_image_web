@@ -9,5 +9,6 @@
     "tool-tip-download":"Download",
     "tool-tip-share":"Share image",
     "tool-tip-generate":"Start generate image",
-    "tool-tip-image":"Image"
+    "tool-tip-image":"Image",
+    "scenario":"Scenario"
 }

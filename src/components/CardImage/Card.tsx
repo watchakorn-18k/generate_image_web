@@ -8,8 +8,7 @@ import {
 import { Tooltip } from "@material-tailwind/react";
 import FileSaver from "file-saver";
 import "./CardImage.css";
-import { useTranslation } from 'react-i18next';
-
+import { useTranslation } from "react-i18next";
 
 type Props = {
   url: string;
@@ -18,7 +17,7 @@ type Props = {
   index: number;
 };
 
-export default function Card({ url, text, index , thumbnail }: Props) {
+export default function Card({ url, text, index, thumbnail }: Props) {
   const { t } = useTranslation();
   const handleDownload = () => {
     fetch(url)
@@ -34,29 +33,28 @@ export default function Card({ url, text, index , thumbnail }: Props) {
       <div className="indicator">
         <span className="indicator-item badge badge-secondary">#{index}</span>
         <div className="card card-compact w-80 md:w-96 bg-base-100 shadow-xl">
-        <Tooltip className="text" content={`${t("tool-tip-image")} #${index}`} placement="right" >
-          <figure>
-          
-            <img
-              src={`${thumbnail}?v=${Math.floor(Math.random() * 100000)}`}
-              className="w-full h-80 object-cover image-card"
+
+            <figure>
+              <img
+                src={`${thumbnail}?v=${index}`}
+                className="w-full h-80 object-cover image-card"
               />
-              
             </figure>
-            </Tooltip>
           <div className="card-body">
-            <h2 className="card-title"></h2>
+            <h2 className="card-title">
+              {t("scenario")} {index}
+            </h2>
             <p className="text">{text}</p>
             <div className="card-actions justify-end">
-              <Tooltip className="text" content={t("tool-tip-download")} >
+              <Tooltip className="text" content={t("tool-tip-download")}>
                 <button className="btn-text" onClick={handleDownload}>
                   <IconDownload />
                 </button>
               </Tooltip>
-              <div className="dropdown">
-              <Tooltip className="text" content={t("tool-tip-share")} >
-                <label tabIndex={0} className="btn-text">
-                  <IconShare />
+              <div className="dropdown dropdown-end xl:dropdown-right ">
+                <Tooltip className="text" content={t("tool-tip-share")}>
+                  <label tabIndex={0} className="btn-text">
+                    <IconShare />
                   </label>
                 </Tooltip>
                 <ul
