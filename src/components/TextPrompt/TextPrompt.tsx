@@ -112,7 +112,7 @@ export default function TextPrompt({ status_gen ,status_erro }: Props) {
           mount: { y: 0 },
           unmount: { y: 100 },
         }} className="fixed bottom-4 w-4/4 md:w-1/2 right-1 md:right-5 z-10 ">
-      {t("error") ?? ""}
+      <div className="flex justify-center"><IconAlertTriangleFilled />&nbsp;&nbsp;{t("error") ?? ""}</div>
       </Alert>
       <Alert open={openError} onClose={() => {
         axios.post(
