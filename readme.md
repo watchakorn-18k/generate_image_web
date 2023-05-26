@@ -11,6 +11,13 @@
 </p>
 </div >
 
+<p align="center">
+  Try Now (free!): <a href="https://watchakorn-18k.github.io/generate_image_web/" target="_blank">
+    Generate Image From Text
+  </a>
+</p>
+<br>
+
 # Generate Image From Text
 > 🖼️ Generate Inage With Text with EdgeGPT reverse engineering
 <br>
