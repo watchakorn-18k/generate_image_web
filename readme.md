@@ -75,6 +75,7 @@ npm run build
 
 
 # Changelog
+- v1.1.6 Fix bug api and manage error front end and back end
 - v1.1.5 Check bad words in prompt
 - v1.1.4 Fix UI responsive layout tablet
 - v1.1.3 Change name donwload image

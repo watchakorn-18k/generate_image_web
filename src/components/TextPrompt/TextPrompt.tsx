@@ -33,20 +33,21 @@ export default function TextPrompt({ status_gen ,status_erro }: Props) {
     if (open) {
       const timeoutId = setTimeout(() => {
         setOpen(false);
-      }, 2000);
+      }, 1000);
       return () => clearTimeout(timeoutId);
     }
   }, [open]);
 
 
-  // useEffect(() => {
-  //   if (openError) {
-  //     const timeoutId = setTimeout(() => {
-  //       setOpenError(false);
-  //     }, 2000);
-  //     return () => clearTimeout(timeoutId);
-  //   }
-  // }, [openError]);
+  useEffect(() => {
+    const timeoutId = setInterval(() => {
+      if (status_erro) {
+        setOpenError(true);
+        
+      }
+    }, 1000);
+    return () => clearTimeout(timeoutId);
+  }, [status_erro]);
 
   const SendData = () => {
     if (inputText != "") {
@@ -87,6 +88,7 @@ export default function TextPrompt({ status_gen ,status_erro }: Props) {
             onChange={handleInputChange}
             disabled={!status_gen}
             onKeyDown={handleKeyDown}
+            value={inputText}
           />
           <Tooltip className="text" content={t("tool-tip-generate")} >
           <button
@@ -119,9 +121,8 @@ export default function TextPrompt({ status_gen ,status_erro }: Props) {
           `${import.meta.env.VITE_URL_STATUS_ERR }`,
           { status_erro: false }
         )
-          .then((response) => {
-          console.log(response);
-          
+          .then(() => {
+          setInputText("");
           setOpenError(false);
         })
         .catch((error) => {
