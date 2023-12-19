@@ -455,18 +455,18 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
-"@tabler/icons-react@^2.20.0":
-  "integrity" "sha512-r2uC0Mi3ozHD2G+IYi0A0Iy2203dbQo5EAFxn055MyIhH7U2VNsvyopTqOj+AVedy7cqR86T9zhryRUGC78WZA=="
-  "resolved" "https://registry.npmjs.org/@tabler/icons-react/-/icons-react-2.20.0.tgz"
-  "version" "2.20.0"
+"@tabler/icons-react@^2.44.0":
+  "integrity" "sha512-10qwrqJ/QBNgY4YYer9PjWmCwm3wv9aVK8kGAkFKkwu6UJURVLZ2ea+oFh5j6vSXnA1zMtUG+X8anR5fZ67Isw=="
+  "resolved" "https://registry.npmjs.org/@tabler/icons-react/-/icons-react-2.44.0.tgz"
+  "version" "2.44.0"
   dependencies:
-    "@tabler/icons" "2.20.0"
+    "@tabler/icons" "2.44.0"
     "prop-types" "^15.7.2"
 
-"@tabler/icons@2.20.0":
-  "integrity" "sha512-BsUEJoqREs8bqcrf5HfJBq6/rDvsRI3h+T+0X1o7i8LBHonsH0iAngcyL0I82YKoSy9NiVDvM3LV63zDP0nPYQ=="
-  "resolved" "https://registry.npmjs.org/@tabler/icons/-/icons-2.20.0.tgz"
-  "version" "2.20.0"
+"@tabler/icons@2.44.0":
+  "integrity" "sha512-WPPtihDcAwEm1QZM9MXQw6+r/R2/qx7KMU1eegsi9DsqBLAb0W2kbt6e/syvd6j9c+6XNpRVBW1ziGqSWQAWOg=="
+  "resolved" "https://registry.npmjs.org/@tabler/icons/-/icons-2.44.0.tgz"
+  "version" "2.44.0"
 
 "@tailwindcss/typography@^0.5.9":
   "integrity" "sha512-t8Sg3DyynFysV9f4JDOVISGsjazNb48AeIYQwcL+Bsq5uf4RYL75C1giZ43KISjeDGBaTN3Kxh7Xj/vRSMJUUg=="

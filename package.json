@@ -12,7 +12,7 @@
   "dependencies": {
     "@icons-pack/react-simple-icons": "^7.2.0",
     "@material-tailwind/react": "^2.0.1",
-    "@tabler/icons-react": "^2.20.0",
+    "@tabler/icons-react": "^2.44.0",
     "@types/node": "^20.2.3",
     "axios": "^1.4.0",
     "copy-image-clipboard": "^2.1.2",

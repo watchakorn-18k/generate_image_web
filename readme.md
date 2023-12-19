@@ -80,6 +80,7 @@ npm run build
 
 # Changelog
 
+- v1.1.9 change icon twitter to X
 - v1.1.8 add button copy image
 - v1.1.7 Fix bug can't access image
 - v1.1.6 Fix bug api and manage error front end and back end

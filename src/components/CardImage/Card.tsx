@@ -2,7 +2,7 @@ import {
   IconDownload,
   IconShare,
   IconBrandMeta,
-  IconBrandTwitter,
+  IconBrandX,
   IconBrandLinkedin,
   IconCopy,
 } from "@tabler/icons-react";
@@ -76,7 +76,7 @@ export default function Card({ url, text, index, thumbnail }: Props) {
                   <IconDownload />
                 </button>
               </Tooltip>
-              <div className="dropdown dropdown-end xl:dropdown-right ">
+              <div className="dropdown dropdown-end xl:dropdown-right z-10">
                 <Tooltip className="text" content={t("tool-tip-share")}>
                   <label tabIndex={0} className="btn-text">
                     <IconShare />
@@ -101,11 +101,10 @@ export default function Card({ url, text, index, thumbnail }: Props) {
                     <a
                       href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
                         url
-                      )}&text=Generate%20image%20from%20text%20with%20 by wk18k!`}
+                      )}&text=Prompt+%22${text}%22+-+Generate+Image+by+wk-18k+&related=ericwastl&hashtags=GenerateImageByWK18K`}
                       target="_blank"
                     >
-                      <IconBrandTwitter />
-                      Twitter
+                      <IconBrandX />X (twitter)
                     </a>
                   </li>
                   <li>
