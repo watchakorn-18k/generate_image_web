@@ -2,23 +2,23 @@
     border: none;
     border-radius: 100% !important;
     top: -0.75rem !important;
-    background: linear-gradient(80deg, #61D9E8, transparent) #4ABBC9 !important;
+    background: linear-gradient(80deg, #0e1d8d, transparent) #004cff !important;
     transition: background-color 1s;
 }
 
-.btn-search:hover{
+.btn-search:hover {
     background-color: #2e63f3 !important;
 }
 
-.btn-disable{
+.btn-disable {
     background: linear-gradient(80deg, #a3a3a394, transparent) #a3a3a394 !important;
     background-color: #a3a3a3 !important;
     color: #e6e6e6 !important;
 }
 
 @media screen and (max-width: 640px) {
-    .mobile-top{
+    .mobile-top {
         top: -0.30rem !important;
     }
-     
+
 }

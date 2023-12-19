@@ -4,11 +4,13 @@ import {
   IconBrandMeta,
   IconBrandTwitter,
   IconBrandLinkedin,
+  IconCopy,
 } from "@tabler/icons-react";
 import { Tooltip } from "@material-tailwind/react";
 import FileSaver from "file-saver";
 import "./CardImage.css";
 import { useTranslation } from "react-i18next";
+import { copyImageToClipboard } from "copy-image-clipboard";
 
 type Props = {
   url: string;
@@ -23,29 +25,52 @@ export default function Card({ url, text, index, thumbnail }: Props) {
     fetch(url)
       .then((res) => res.blob())
       .then((blob) => {
-        FileSaver.saveAs(blob, `${index}_${thumbnail.slice(58,-5)}-wk18k.jpeg`);
+        FileSaver.saveAs(
+          blob,
+          `${index}_${thumbnail.slice(58, -5)}-wk18k.jpeg`
+        );
       })
       .catch((err) => console.error(err));
+  };
+
+  const handleCopyImage = async () => {
+    try {
+      copyImageToClipboard(url)
+        .then(() => {
+          console.log("Image Copied");
+        })
+        .catch((e) => {
+          console.log("Error: ", e.message);
+        });
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
   };
 
   return (
     <div className="py-1 lg:py-5">
       <div className="indicator">
-        <span className="indicator-item badge badge-secondary">#{index}</span>
+        <span className="indicator-item p-3 rounded-full badge badge-warning">
+          #{index}
+        </span>
         <div className="card card-compact w-80 md:w-96 bg-base-100 shadow-xl">
-
-            <figure>
-              <img
-                src={`${thumbnail}?v=${index}`}
-                className="w-full h-80 object-cover image-card"
-              />
-            </figure>
+          <figure>
+            <img
+              src={`${thumbnail}?v=${index}`}
+              className="w-full h-80 object-cover image-card"
+            />
+          </figure>
           <div className="card-body">
             <h2 className="card-title">
               {t("scenario")} {index}
             </h2>
             <p className="text">{text}</p>
             <div className="card-actions justify-end">
+              <Tooltip className="text" content={t("tool-tip-copy")}>
+                <button className="btn-text" onClick={handleCopyImage}>
+                  <IconCopy />
+                </button>
+              </Tooltip>
               <Tooltip className="text" content={t("tool-tip-download")}>
                 <button className="btn-text" onClick={handleDownload}>
                   <IconDownload />

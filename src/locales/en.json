@@ -1,15 +1,16 @@
 {
-    "name_web":"Generate Image From Text",
-    "loading":"Generating image may take a moment..."
-    ,"by":"Make By",
-    "name_1":"Watchakorn Buddeewong",
-    "name_2":"Ruangdej Khantayaporn",
-    "prompt":"Fill out the prompts for creating a exsample：a snowy night",
-    "error":"Prompt is required! to create an image first",
-    "tool-tip-download":"Download",
-    "tool-tip-share":"Share image",
-    "tool-tip-generate":"Start generate image",
-    "tool-tip-image":"Image",
-    "scenario":"Scenario",
-    "status_err":"Your prompt has been blocked by Bing. Try to change any bad words and try again or unable to portray this word."
+    "name_web": "Generate Image From Text",
+    "loading": "Generating image may take a moment...",
+    "by": "Make By",
+    "name_1": "Watchakorn Buddeewong",
+    "name_2": "Ruangdej Khantayaporn",
+    "prompt": "Fill out the prompts for creating a exsample：a snowy night",
+    "error": "Prompt is required! to create an image first",
+    "tool-tip-download": "Download",
+    "tool-tip-share": "Share image",
+    "tool-tip-generate": "Start generate image",
+    "tool-tip-image": "Image",
+    "scenario": "Scenario",
+    "status_err": "Your prompt has been blocked by Bing. Try to change any bad words and try again or unable to portray this word.",
+    "tool-tip-copy": "Copy image"
 }
