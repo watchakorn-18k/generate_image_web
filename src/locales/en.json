@@ -12,5 +12,7 @@
     "tool-tip-image": "Image",
     "scenario": "Scenario",
     "status_err": "Your prompt has been blocked by Bing. Try to change any bad words and try again or unable to portray this word.",
-    "tool-tip-copy": "Copy image"
+    "tool-tip-copy": "Copy image",
+    "star_github": "Star it on GitHub",
+    "counter_viewer": "Total Page Views"
 }

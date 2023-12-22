@@ -6,16 +6,27 @@ import {
   SiTsnode,
   SiVite,
 } from "@icons-pack/react-simple-icons";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
   const { t } = useTranslation();
+  const [counter, setCounter] = useState(0);
+  const fetchCounter = async () => {
+    const response = await axios.get(
+      "https://counterapi.com/api/watchakorn-18k.github.io/generate_image_web/"
+    );
+    setCounter(response.data.value);
+  };
+  useEffect(() => {
+    fetchCounter();
+  }, [counter]);
   return (
-    <div className="pt-10">
+    <div className="pt-10 bg-neutral">
       <footer className="footer p-5 bg-neutral text-neutral-content flex justify-center md:flex md:justify-around ">
         <div>
           <span className="footer-title"> {t("by")}</span>
           <div className="grid grid-flow-row grid-cols-1 md:grid-flow-col gap-5">
-
             <div className="grid grid-flow-col gap-0 md:gap-1">
               <SiFastapi />
               <SiPython />
@@ -23,7 +34,7 @@ export default function Footer() {
               <SiTsnode />
             </div>
 
-            <p >{t("name_1")} ( Front-End / Back-End )</p>
+            <p>{t("name_1")} ( Front-End / Back-End )</p>
           </div>
           <div className="grid grid-flow-col">
             <svg
@@ -73,19 +84,24 @@ export default function Footer() {
         </div>
       </footer>
       <div className="footer p-2 bg-neutral text-neutral-content flex justify-center md:flex md:justify-around ">
-        <div className="flex justify-center w-full">
-          <div className="grid grid-cols-1 gap-1 place-items-center">
-          <img
-            src="https://sciencetech.nrru.ac.th/vendor/bootstrap/images/logo_nrru.png"
-            alt=""
-            className="w-5 grayscale brightness-150 contrast-125 hover:grayscale-0 hover:contrast-100 transition duration-300"
-            draggable="false"
-          />
-            <span className="footer-title">NRRU</span>
+        <div className="flex flex-col">
+          <div className="flex justify-center w-full">
+            <div className="grid grid-cols-1 gap-1 place-items-center">
+              <img
+                src="https://sciencetech.nrru.ac.th/vendor/bootstrap/images/logo_nrru.png"
+                alt=""
+                className="w-5 grayscale brightness-150 contrast-125 hover:grayscale-0 hover:contrast-100 transition duration-300"
+                draggable="false"
+              />
+              <span className="footer-title">NRRU</span>
+            </div>
           </div>
-         
+          <div>
+            <span className="badge badge-neutral-base p-4">
+              {t("counter_viewer")} : {counter}
+            </span>
+          </div>
         </div>
-        
       </div>
     </div>
   );
