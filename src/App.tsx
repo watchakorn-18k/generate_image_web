@@ -10,11 +10,8 @@ import Skeleton from "./components/CardImage/Skeleton.tsx";
 import CardImage from "./components/CardImage/CardImage.tsx";
 import Footer from "./components/Footer/Footer.tsx";
 import Navbar from "./components/Navbar/Navbar.tsx";
-import { useTranslation } from "react-i18next";
-import { Progress, Spinner } from "@material-tailwind/react";
 
 export default function App() {
-  const { t } = useTranslation();
   const [data, setData] = useState({
     status_gen: false,
     images: [],
@@ -22,7 +19,6 @@ export default function App() {
     thumbnail: [],
     status_erro: false,
   });
-  const [value, setValue] = useState(0);
   const [isRunning, setIsRunning] = useState(true);
   const choices = [image_logo, image_logo_1, image_logo_2];
   const [randomChoice] = useState(
@@ -60,12 +56,6 @@ export default function App() {
 
   useEffect(() => {
     let intervalId: NodeJS.Timeout;
-
-    if (isRunning) {
-      intervalId = setInterval(() => {
-        setValue((value) => (value + 0.1) % 100);
-      });
-    }
 
     return () => clearInterval(intervalId);
   }, [isRunning]);
