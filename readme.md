@@ -80,6 +80,7 @@ npm run build
 
 # Changelog
 
+- v1.2.1 change url and add skeleton object while loading
 - v1.2.0 add counter page and add star it on github
 - v1.1.9 change icon twitter to X
 - v1.1.8 add button copy image

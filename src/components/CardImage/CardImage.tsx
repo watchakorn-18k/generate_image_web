@@ -8,7 +8,7 @@ type Props = {
 
 export default function CardImage({ urls, text, thumbnails }: Props) {
   const CardElements = urls.map((url: string, index: number) => {
-    return index != 4 ? (
+    return index != 3 ? (
       <Card
         key={index}
         url={url}

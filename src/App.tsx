@@ -6,6 +6,7 @@ import image_logo_1 from "@/assets/image_logo_1.png";
 import image_logo_2 from "@/assets/image_logo_2.png";
 import ImageShow from "./components/ImageShow/ImageShow.tsx";
 import TextPrompt from "./components/TextPrompt/TextPrompt.tsx";
+import Skeleton from "./components/CardImage/Skeleton.tsx";
 import CardImage from "./components/CardImage/CardImage.tsx";
 import Footer from "./components/Footer/Footer.tsx";
 import Navbar from "./components/Navbar/Navbar.tsx";
@@ -83,18 +84,9 @@ export default function App() {
             status_gen={data.status_gen}
             status_erro={data.status_erro}
           />
+
           {data.status_gen === false ? (
-            <div className="grid grid-cols-1 gap-2 place-items-center p-10 md:p-32">
-              <Spinner className="h-10 w-10 md:h-20 md:w-20 mr-3" />
-              <p className="text-center text-xl animate-pulse">
-                {t("loading")}
-              </p>
-              <Progress
-                value={value}
-                className="w-60 md:w-1/2 "
-                variant="gradient"
-              />
-            </div>
+            <Skeleton />
           ) : (
             <CardImage
               text={data.prompt_text}
